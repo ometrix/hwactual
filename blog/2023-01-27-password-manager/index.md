@@ -5,7 +5,7 @@ authors: [omar]
 tags: [WebApps]
 ---
 
-![bitwarden](./bitwarden-review-1.png)
+![bitwarden](bitwarden-review-1.png)
 
 En el creciente mundo de internet es importante que conozcas los riesgos a los que nos enfrentamos cada día. Uno de los mayores riesgos es el de las contraseñas, al ser la mente muy frágil tenemos la costumbre de colocar contraseñas que suelen ser inseguras y fáciles de adivinar para los atacantes por ello es importante que consideremos el uso de Gestores de Contraseñas.
 
@@ -13,7 +13,7 @@ Estos gestores nos permiten colocar contraseñas más complejas sin necesidad de
 
 Ahora, la pregunta: ¿Cómo iniciamos a usar este gestor? Bueno, la respuesta es sencilla, vamos a dirigirnos a <a href="https://vault.bitwarden.com/">vault.bitwarden.com</a> para luego continuar haciendo clic en ‘Crear una Cuenta’.
 
-![bitwarden-login](./bitwarden-login.png)
+![bitwarden-login](bitwarden-login.png)
 
 Te será solicitada información como tu correo, etc para crear tu cuenta. Una vez creada ya podrás guardar la información de tus contraseñas, e incluso te incluye un generador de contraseñas con el que puedes crearlas según la complejidad que desees y almacenarlas ahí.
 

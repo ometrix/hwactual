@@ -10,4 +10,4 @@ tags: [facebook, hello, docusaurus]
 ### Este es mi blog, creado usando docusaurus una iniciativa de mi parte para compartir lo que hago y lo que me gusta con el mundo.
 
 
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
+![Docusaurus Plushie](docusaurus-plushie-banner.jpeg)
