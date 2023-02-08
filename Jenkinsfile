@@ -5,6 +5,7 @@ pipeline {
         docker {
             image 'node:lts-bullseye-slim'
             args '-p 3000:3000'
+            args  '-v /app:/app'
         }
     }
     stages {
@@ -21,7 +22,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'ssh -tt ubuntu@jenkins.hwactual.net << EOF cd /opt/hwactual && git pull && npm run build EOF'
+                sh 'cd /app'
+                sh 'git pull'
+                sh 'npm run build'
             }
         }
     }
