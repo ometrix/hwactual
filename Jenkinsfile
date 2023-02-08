@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('Build') {
+        stage('Test') {
             agent {
                 docker {
                     image 'node:lts-bullseye-slim'
