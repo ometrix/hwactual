@@ -20,11 +20,21 @@ pipeline {
                 sh 'echo "Test"'
             }
         }
+        stage('Update File') {
+            steps {
+                agent{
+                    docker {
+                        image 'bitnami/git:latest'
+                        args  '-v /app:/app'
+                    }
+                }
+                sh 'cd /app'
+                sh 'git pull'
+            }
+        }
         stage('Deliver') {
             steps {
                 sh 'cd /app'
-                sh 'sudo apt install git -y'
-                sh 'git pull'
                 sh 'npm run build'
             }
         }
