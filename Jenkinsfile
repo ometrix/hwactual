@@ -23,10 +23,7 @@ pipeline {
         stage('Update File') {
             steps {
                 agent{
-                    docker {
-                        image 'bitnami/git:latest'
-                        args  '-v /app:/app'
-                    }
+                    docker { image 'bitnami/git:latest' }
                 }
                 sh 'cd /app'
                 sh 'git pull'
