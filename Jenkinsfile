@@ -34,6 +34,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
+                sh 'cd /app'
                 sh 'npm run build'
             }
         }
