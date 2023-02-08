@@ -23,6 +23,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh 'cd /app'
+                sh 'apt install git -y'
                 sh 'git pull'
                 sh 'npm run build'
             }
