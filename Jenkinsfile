@@ -21,7 +21,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cd /app && git pull'
+                sh 'cd /app && ls && pwd'
             }
         }
         stage('Deliver') {
