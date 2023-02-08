@@ -11,11 +11,21 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                sh 'npm run build'
             }
         }
         stage('Test') {
             steps {
-                sh 'npm run start'
+                sh 'npm test'
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh 'ssh -tt ubuntu@jenkins.hwactual.net << EOF
+                cd /opt/hwactual
+                git pull
+                npm run build
+                EOF'
             }
         }
     }
