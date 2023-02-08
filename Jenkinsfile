@@ -1,4 +1,5 @@
 pipeline {
+    agent none
     stages {
         agent {
             docker {
@@ -13,7 +14,6 @@ pipeline {
             }
         }
         stage('Test') {
-        agent { none }
             steps {
                 sh 'echo "Test"'
             }
