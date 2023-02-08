@@ -21,9 +21,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'cd /app'
-                sh 'git init'
-                sh 'git pull'
+                sh 'cd /app && git pull'
             }
         }
         stage('Deliver') {
