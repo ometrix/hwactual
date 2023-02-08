@@ -1,14 +1,11 @@
-
-
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-bullseye-slim'
-            args '-p 3000:3000'
-            args  '-v /app:/app'
-        }
-    }
     stages {
+        agent {
+            docker {
+                image 'node:lts-bullseye-slim'
+                args '-p 3000:3000'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
@@ -16,6 +13,7 @@ pipeline {
             }
         }
         stage('Test') {
+        agent { none }
             steps {
                 sh 'echo "Test"'
             }
@@ -33,6 +31,13 @@ pipeline {
             }
         }
         stage('Deliver') {
+            agent {
+                docker {
+                    image 'node:lts-bullseye-slim'
+                    args '-p 3000:3000'
+                    args  '-v /app:/app'
+                }
+            }
             steps {
                 sh 'cd /app'
                 sh 'npm run build'
