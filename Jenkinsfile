@@ -21,11 +21,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'ssh -tt ubuntu@jenkins.hwactual.net << EOF
-                cd /opt/hwactual
-                git pull
-                npm run build
-                EOF'
+                sh 'ssh -tt ubuntu@jenkins.hwactual.net << EOF cd /opt/hwactual && git pull && npm run build EOF'
             }
         }
     }
