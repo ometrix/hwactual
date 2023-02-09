@@ -9,15 +9,15 @@ pipeline {
                 }
             }
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+//                 sh 'npm install'
+//                 sh 'npm run build'
+                   sh 'ls'
             }
         }
         stage('Update File') {
             agent{
                 docker {
                     image 'bitnami/git:latest'
-                    args  '-v /var/jenkins_home/workspace/hwactual.net/app:/app'
                 }
             }
             steps {
