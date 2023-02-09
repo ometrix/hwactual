@@ -21,7 +21,7 @@ pipeline {
 //         }
         stage('Deliver') {
             steps {
-                sh 'npm run build & sleep 1'
+                sh 'npm run serve & sleep 1'
             }
         }
     }
