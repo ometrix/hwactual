@@ -21,7 +21,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ls && pwd && ls /app'
+                sh 'ls && pwd && ls app'
             }
         }
         stage('Deliver') {
