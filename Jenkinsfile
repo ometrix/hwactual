@@ -18,8 +18,8 @@ pipeline {
             agent{
                 docker {
                     image 'bitnami/git:latest'
-                    //args '-v /opt/hwactual:/var/jenkins_home/workspace/hwactual.net/app'
-                    //args '-v /opt/hwactual:/var/jenkins_home/workspace/hwactual.net/app:/superapp'
+                    args '-v /opt/hwactual:/var/jenkins_home/workspace/hwactual.net/app'
+                    args '-v /var/jenkins_home/workspace/hwactual.net/app:/superapp'
                 }
             }
             steps {
