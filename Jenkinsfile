@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Update File') {
             steps {
-                dir(app) {
+                dir('app') {
                     sh 'ls && pwd && ls app && ls blog'
                 }
             }
