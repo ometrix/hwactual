@@ -16,13 +16,15 @@ pipeline {
         }
         stage('Update File') {
             steps {
-                git url: 'https://github.com/ometrix/hwactual.git'
-                sh 'ls'
+                dir('app') {
+                    git url: 'https://github.com/ometrix/hwactual.git'
+                    sh 'ls'
+                {
             }
         }
         stage('Deliver') {
             steps {
-                dir('hwactual')
+                dir('app')
                     sh 'npm run build'
             }
         }
