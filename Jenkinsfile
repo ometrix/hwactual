@@ -1,30 +1,27 @@
 pipeline {
-    agent any
+    agent {
+       docker {
+           image 'node:lts-bullseye-slim'
+           args '-p 3000:3000'
+       }
+    }
     stages {
         stage('Test') {
-            agent {
-                docker {
-                    image 'node:lts-bullseye-slim'
-                    args '-p 3000:3000'
-                }
-            }
             steps {
-//                 sh 'npm install'
-//                 sh 'npm run build'
-                   sh 'ls'
+                 sh 'npm install'
+                 sh 'npm run build'
             }
         }
-        stage('Update File') {
-            steps {
-                dir('app') {
-                    git url: 'https://github.com/ometrix/hwactual.git'
-                {
-            }
-        }
+//         stage('Update File') {
+//             steps {
+//                 dir('app') {
+//                     git url: 'https://github.com/ometrix/hwactual.git'
+//                 {
+//             }
+//         }
         stage('Deliver') {
             steps {
-                dir('app')
-                    sh 'npm run build'
+                sh 'npm run build & sleep 1'
             }
         }
     }
