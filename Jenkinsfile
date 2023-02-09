@@ -18,7 +18,6 @@ pipeline {
             steps {
                 dir('app') {
                     git url: 'https://github.com/ometrix/hwactual.git'
-                    sh 'ls'
                 {
             }
         }
