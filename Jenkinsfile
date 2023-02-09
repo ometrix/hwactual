@@ -24,7 +24,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 dir('app')
-                    npm run build
+                    sh 'npm run build'
             }
         }
     }
