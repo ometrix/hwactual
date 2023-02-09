@@ -19,7 +19,7 @@ pipeline {
                 docker { image 'bitnami/git:latest'}
             }
             steps {
-                dir('app') {
+                dir('/var/jenkins_home/workspace/hwactual.net/app') {
                     sh 'ls && pwd && ls app'
                 }
             }
