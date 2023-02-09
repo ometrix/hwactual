@@ -15,6 +15,9 @@ pipeline {
             }
         }
         stage('Update File') {
+            agent {
+                docker { image 'bitnami/git:latest'}
+            }
             steps {
                 dir('app') {
                     agent {
