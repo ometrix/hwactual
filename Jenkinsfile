@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Test') {
             agent {
@@ -15,15 +15,10 @@ pipeline {
             }
         }
         stage('Update File') {
-            agent{
-                docker {
-                    image 'bitnami/git:latest'
-                    args '-v /opt/hwactual:/var/jenkins_home/workspace/hwactual.net/app'
-                    args '-v /var/jenkins_home/workspace/hwactual.net/app:/superapp'
-                }
-            }
             steps {
-                sh 'ls && pwd && ls app && ls blog && ls /superapp && ls /'
+                dir(app) {
+                    sh 'ls && pwd && ls app && ls blog'
+                }
             }
         }
         stage('Deliver') {
