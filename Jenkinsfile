@@ -15,26 +15,16 @@ pipeline {
             }
         }
         stage('Update File') {
-            agent {
-                docker { image 'bitnami/git:latest'}
-            }
             steps {
-                dir('/var/jenkins_home/workspace/hwactual.net/app') {
-                    sh 'ls && pwd && ls app'
+                dir('app') {
+                    git 'pull'
                 }
             }
         }
         stage('Deliver') {
-            agent {
-                docker {
-                    image 'node:lts-bullseye-slim'
-                    args '-p 3000:3000'
-                    args  '-v /app:/app'
-                }
-            }
             steps {
-                sh 'cd ./app'
-                sh 'npm run build'
+                dir('app')
+                    npm run build
             }
         }
     }
