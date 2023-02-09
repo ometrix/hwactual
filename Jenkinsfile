@@ -19,11 +19,11 @@ pipeline {
                 docker {
                     image 'bitnami/git:latest'
                     args '-v /opt/hwactual:/var/jenkins_home/workspace/hwactual.net/app'
-                    args '-v ./app:./superapp'
+                    args '-v /opt/hwactual:/var/jenkins_home/workspace/hwactual.net/app:/superapp'
                 }
             }
             steps {
-                sh 'ls && pwd && ls app && ls blog && ls superapp'
+                sh 'ls && pwd && ls app && ls blog && ls superapp && ls /'
             }
         }
         stage('Deliver') {
