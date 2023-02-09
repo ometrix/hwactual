@@ -20,9 +20,6 @@ pipeline {
             }
             steps {
                 dir('app') {
-                    agent {
-                        docker { image 'bitnami/git:latest'}
-                    }
                     sh 'ls && pwd && ls app'
                 }
             }
