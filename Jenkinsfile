@@ -23,7 +23,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'ls && pwd && ls app && ls blog && ls superapp && ls /'
+                sh 'ls && pwd && ls app && ls blog && ls /superapp && ls /'
             }
         }
         stage('Deliver') {
