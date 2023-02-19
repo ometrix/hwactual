@@ -26,3 +26,4 @@ This will create a load balancer which will assign us an external ip on the port
 This way, in a rustic way, the deployment of our app from a container will be complete.
 
 ### Deploying with a manifest
+
