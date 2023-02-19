@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Kubernetes": {
+    "message": "Kubernetes",
+    "description": "The label for category Kubernetes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Kubernetes.link.generated-index.description": {
+    "message": "Aquí encontraras algunos conceptos sobre Kubernetes",
+    "description": "The generated-index page description for category Kubernetes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
+    "message": "Tutorial - Extras",
+    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  }
+}
